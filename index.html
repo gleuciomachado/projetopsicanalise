@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Fabiana Baratta | Psicanalista. Atendimento online para todo o Brasil e brasileiros no exterior.">
+  <meta name="author" content="Fabiana Baratta">
+  <meta name="theme-color" content="#43584d">
+  <title>Fabiana Baratta | Psicanalista</title>
+  <style>
+    :root{
+      --bg:#f7f5ef;
+      --paper:#fffdf9;
+      --soft:#eeece4;
+      --sage:#43584d;
+      --sage-2:#6f8175;
+      --ink:#303a35;
+      --muted:#69716c;
+      --line:#dddcd4;
+      --serif:"Georgia","Times New Roman",serif;
+      --sans:Arial,Helvetica,sans-serif;
+      --max:1180px;
+      --radius:4px;
+      --shadow:0 12px 40px rgba(48,58,53,.08);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--sans);color:var(--ink);background:var(--paper);line-height:1.7}
+    img{max-width:100%;display:block}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    .container{width:min(calc(100% - 40px),var(--max));margin:auto}
+    .eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;color:var(--sage-2);font-weight:700}
+    h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.15}
+    h2{font-size:clamp(2rem,4vw,3.1rem);margin-bottom:20px}
+    h3{font-size:1.45rem}
+    p{color:var(--muted);font-size:1rem}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:9px;
+      padding:13px 22px;border-radius:999px;background:var(--sage);color:#fff;
+      font-size:.88rem;transition:.25s ease;border:1px solid var(--sage)
+    }
+    .btn:hover{transform:translateY(-2px);background:#35483e}
+    .btn-light{background:transparent;color:var(--sage);border-color:var(--sage)}
+    .btn-light:hover{color:#fff}
+    .divider{width:48px;height:1px;background:var(--sage-2);margin:22px 0}
+    section{padding:95px 0;scroll-margin-top:80px}
+
+    /* Header */
+    header{
+      position:sticky;top:0;z-index:1000;background:rgba(255,253,249,.96);
+      backdrop-filter:blur(10px);border-bottom:1px solid rgba(221,220,212,.7)
+    }
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;flex-direction:column;line-height:1}
+    .brand strong{font-family:var(--serif);font-size:1.2rem;letter-spacing:.12em;font-weight:400}
+    .brand span{font-size:.58rem;letter-spacing:.25em;margin-top:7px;color:var(--muted);text-align:center}
+    .nav-links{display:flex;align-items:center;gap:22px;font-size:.78rem;color:#505a54}
+    .nav-links a{position:relative;white-space:nowrap}
+    .nav-links a:after{content:"";position:absolute;left:0;bottom:-7px;width:0;height:1px;background:var(--sage);transition:.2s}
+    .nav-links a:hover:after{width:100%}
+    .nav-cta{padding:10px 17px;font-size:.76rem}
+    .menu-toggle{display:none;border:0;background:none;font-size:1.6rem;color:var(--sage);cursor:pointer}
+
+    /* Hero */
+    .hero{padding:0;background:var(--bg)}
+    .hero-grid{min-height:calc(100vh - 76px);display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
+    .hero-photo{min-height:650px;background:#dedbd1;position:relative;overflow:hidden}
+    .hero-photo img{width:100%;height:100%;object-fit:cover}
+    .photo-placeholder{
+      width:100%;height:100%;min-height:650px;display:flex;align-items:center;justify-content:center;
+      color:#7d827c;text-align:center;padding:40px;background:
+      linear-gradient(135deg,#e6e2d8,#d6d1c5);
+    }
+    .photo-placeholder div{max-width:280px}
+    .photo-placeholder strong{display:block;font-family:var(--serif);font-size:1.5rem;font-weight:400;margin-bottom:8px}
+    .hero-copy{display:flex;align-items:center;padding:70px clamp(35px,7vw,100px)}
+    .hero-copy h1{font-size:clamp(3rem,5vw,5rem);color:#33483e;max-width:620px}
+    .hero-copy p{max-width:500px;font-size:1.05rem}
+    .hero-note{font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--sage-2);margin-bottom:25px}
+
+    /* About */
+    .about{background:var(--paper)}
+    .about-grid{display:grid;grid-template-columns:1.05fr .85fr .7fr;gap:55px;align-items:center}
+    .about-image{height:480px;background:#e9e5dc;overflow:hidden}
+    .about-image img{width:100%;height:100%;object-fit:cover}
+    .quote{font-family:var(--serif);font-size:2rem;line-height:1.35;font-style:italic;color:#59665e}
+    .quote:before{content:"“";font-size:4rem;display:block;height:30px;color:#a1aaa3}
+
+    /* Experiences */
+    .experiences{background:var(--bg)}
+    .experience-grid{display:grid;grid-template-columns:1.2fr .95fr .95fr;gap:0}
+    .experience-card{padding:0 38px;border-left:1px solid var(--line)}
+    .experience-card:first-child{border-left:0;padding-left:0}
+    .experience-card:last-child{padding-right:0}
+    .experience-card h2{font-size:2rem}
+    .bullet-list{columns:2;gap:28px;margin:24px 0}
+    .bullet-list li{list-style:none;position:relative;padding-left:17px;margin-bottom:10px;font-size:.9rem;color:var(--muted)}
+    .bullet-list li:before{content:"";width:5px;height:5px;border-radius:50%;background:var(--sage-2);position:absolute;left:0;top:10px}
+
+    /* Steps */
+    .steps{margin-top:26px}
+    .step{display:grid;grid-template-columns:34px 1fr;gap:15px;margin-bottom:25px}
+    .step-number{width:30px;height:30px;border-radius:50%;background:var(--sage);color:#fff;display:grid;place-items:center;font-size:.75rem}
+    .step h3{font-size:1.05rem;margin-bottom:5px}
+    .step p{font-size:.86rem}
+
+    /* Online / abroad */
+    .cards-section{background:var(--paper)}
+    .cards{display:grid;grid-template-columns:1fr 1fr;gap:25px}
+    .info-card{min-height:360px;padding:45px;background:var(--bg);position:relative;overflow:hidden}
+    .info-card:nth-child(2){background:#e9ece5}
+    .info-card h2{font-size:2.25rem;max-width:470px}
+    .info-card p{max-width:520px}
+    .leaf{position:absolute;right:-30px;bottom:-50px;font-family:var(--serif);font-size:9rem;color:rgba(67,88,77,.08);transform:rotate(-15deg)}
+
+    /* FAQ */
+    .faq{background:var(--bg)}
+    .faq-grid{max-width:900px;margin:auto}
+    details{border-top:1px solid var(--line);padding:22px 0}
+    details:last-child{border-bottom:1px solid var(--line)}
+    summary{cursor:pointer;list-style:none;font-family:var(--serif);font-size:1.2rem;padding-right:30px;position:relative}
+    summary::-webkit-details-marker{display:none}
+    summary:after{content:"+";position:absolute;right:0;font-family:var(--sans);font-size:1.2rem;color:var(--sage)}
+    details[open] summary:after{content:"−"}
+    details p{padding:15px 30px 2px 0;font-size:.94rem}
+
+    /* Contact */
+    .contact{background:var(--paper);padding-bottom:0}
+    .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;align-items:stretch}
+    .contact-photo{min-height:470px;background:#dedbd1}
+    .contact-photo img{width:100%;height:100%;object-fit:cover}
+    .contact-copy{padding:65px clamp(35px,7vw,90px);background:var(--bg)}
+    .contact-list{margin:30px 0}
+    .contact-item{margin-bottom:16px}
+    .contact-item strong{display:block;font-family:var(--serif);font-size:1rem;font-weight:400}
+    .contact-item span{font-size:.9rem;color:var(--muted)}
+
+    /* Final CTA */
+    .final-cta{background:var(--sage);color:#fff;text-align:center;padding:75px 20px}
+    .final-cta h2{font-size:clamp(2.2rem,4vw,3.4rem);max-width:800px;margin:0 auto 10px;color:#fff}
+    .final-cta p{color:#e5ebe6;margin-bottom:28px}
+    .final-cta .btn{background:transparent;border-color:#fff;color:#fff}
+    .final-cta .btn:hover{background:#fff;color:var(--sage)}
+
+    footer{background:var(--paper);padding:35px 0}
+    .footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;gap:20px;font-size:.78rem;color:var(--muted)}
+    .footer-brand{font-family:var(--serif);font-size:1rem;letter-spacing:.1em;color:var(--ink)}
+    .footer-center{text-align:center}
+    .footer-right{text-align:right}
+    .whatsapp-float{
+      position:fixed;right:22px;bottom:22px;z-index:900;width:56px;height:56px;border-radius:50%;
+      background:#25d366;color:white;display:grid;place-items:center;font-weight:bold;font-size:1.3rem;
+      box-shadow:0 7px 25px rgba(0,0,0,.18);transition:.2s
+    }
+    .whatsapp-float:hover{transform:scale(1.05)}
+
+    @media(max-width:1050px){
+      .nav-links{gap:13px;font-size:.7rem}
+      .about-grid{grid-template-columns:1fr 1fr}
+      .quote{grid-column:1/-1}
+    }
+    @media(max-width:800px){
+      .container{width:min(calc(100% - 30px),var(--max))}
+      section{padding:70px 0}
+      .nav{height:68px}
+      .menu-toggle{display:block}
+      .nav-links{
+        display:none;position:absolute;top:68px;left:0;right:0;background:var(--paper);
+        padding:20px 25px 25px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line);
+        box-shadow:0 10px 25px rgba(0,0,0,.05)
+      }
+      .nav-links.open{display:flex}
+      .nav-cta{display:none}
+      .hero-grid{grid-template-columns:1fr}
+      .hero-photo,.photo-placeholder{min-height:65vh;height:65vh}
+      .hero-copy{padding:60px 25px 70px}
+      .hero-copy h1{font-size:3rem}
+      .about-grid,.experience-grid,.cards,.contact-grid{grid-template-columns:1fr}
+      .about-image{height:380px}
+      .experience-card{border-left:0;border-top:1px solid var(--line);padding:35px 0}
+      .experience-card:first-child{border-top:0;padding-top:0}
+      .experience-card:last-child{padding-right:0}
+      .bullet-list{columns:1}
+      .info-card{min-height:320px}
+      .contact-photo{min-height:330px}
+      .footer-grid{grid-template-columns:1fr;text-align:center}
+      .footer-center,.footer-right{text-align:center}
+    }
+    @media(max-width:480px){
+      .hero-copy h1{font-size:2.55rem}
+      .brand strong{font-size:1rem}
+      .brand span{font-size:.5rem}
+      .hero-photo,.photo-placeholder{min-height:55vh;height:55vh}
+      .info-card{padding:35px 28px}
+      .contact-copy{padding:50px 25px}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#inicio" aria-label="Fabiana Baratta - início">
+      <strong>FABIANA BARATTA</strong>
+      <span>PSICANALISTA</span>
+    </a>
+
+    <button class="menu-toggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+
+    <nav class="nav-links" aria-label="Menu principal">
+      <a href="#inicio">Início</a>
+      <a href="#sobre">Sobre mim</a>
+      <a href="#vivendo">Talvez você esteja vivendo...</a>
+      <a href="#psicanalise">O que é a Psicanálise</a>
+      <a href="#atendimento">Atendimento</a>
+      <a href="#exterior">Para brasileiros no exterior</a>
+      <a href="#contato">Contato</a>
+    </nav>
+
+    <a class="btn nav-cta" data-whatsapp href="#">Agendar uma conversa</a>
+  </div>
+</header>
+
+<main>
+  <section class="hero" id="inicio">
+    <div class="hero-grid">
+      <div class="hero-photo">
+        <!-- FOTO PRINCIPAL DA FABIANA -->
+        <img src="foto-fabiana.jpg" alt="Fabiana Baratta, psicanalista">
+      </div>
+      <div class="hero-copy">
+        <div>
+          <div class="eyebrow">Fabiana Baratta · Psicanalista</div>
+          <div class="divider"></div>
+          <h1>Você não precisa ter as respostas para começar a falar.</h1>
+          <p class="hero-note">Um espaço de escuta, acolhimento e respeito.</p>
+          <p>Um espaço para você poder falar sobre o que sente, pensa e vive, respeitando o seu tempo e a singularidade da sua história.</p>
+          <br>
+          <a class="btn" data-whatsapp href="#">◉ &nbsp;Agendar uma conversa</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="about" id="sobre">
+    <div class="container about-grid">
+      <div>
+        <div class="eyebrow">Sobre mim</div>
+        <div class="divider"></div>
+        <h2>Um espaço para falar.</h2>
+        <p>Sou <strong>Fabiana Baratta, psicanalista</strong>, com formação em Psicanálise pela Escola de Psicanálise de Curitiba.</p>
+        <br>
+        <p>Meu trabalho parte da escuta e do respeito à singularidade de cada pessoa e de cada história.</p>
+        <br>
+        <p>A psicanálise oferece um espaço para falar livremente sobre aquilo que, muitas vezes, não conseguimos dizer em outros lugares.</p>
+        <br>
+        <p>Não se trata de oferecer respostas prontas, mas de possibilitar que, através da fala e da escuta, novas perguntas, sentidos e caminhos possam surgir.</p>
+        <br>
+        <p>Meu propósito é oferecer um espaço de acolhimento, escuta e respeito ao tempo de cada pessoa.</p>
+        <br>
+        <p><strong>Registro profissional: CBPC-5188</strong></p>
+        <br>
+        <a class="btn" data-whatsapp href="#">Conheça meu trabalho</a>
+      </div>
+
+      <div class="about-image">
+        <img src="foto-fabiana.jpg" alt="Fabiana Baratta, psicanalista">
+      </div>
+
+      <div class="quote">
+        A escuta é o início de novos caminhos.
+      </div>
+    </div>
+  </section>
+
+  <section class="experiences" id="vivendo">
+    <div class="container experience-grid">
+      <div class="experience-card">
+        <div class="eyebrow">Talvez você esteja vivendo...</div>
+        <div class="divider"></div>
+        <h2>Talvez você esteja passando por um momento que não consegue explicar.</h2>
+        <p>Você pode estar:</p>
+        <ul class="bullet-list">
+          <li>sentindo ansiedade ou angústia;</li>
+          <li>com pensamentos que parecem não desacelerar;</li>
+          <li>vivendo mudanças ou recomeços;</li>
+          <li>enfrentando uma perda ou separação;</li>
+          <li>sentindo-se sozinho, mesmo estando acompanhado;</li>
+          <li>tendo dificuldades nos relacionamentos;</li>
+          <li>repetindo situações que gostaria de compreender;</li>
+          <li>enfrentando conflitos no trabalho;</li>
+          <li>com dificuldade para estabelecer limites;</li>
+          <li>sentindo-se sobrecarregado;</li>
+          <li>questionando escolhas e caminhos;</li>
+          <li>vivendo uma fase em que parece ter perdido o sentido das coisas;</li>
+          <li>longe de pessoas importantes e sentindo falta de casa.</li>
+        </ul>
+        <p>Você não precisa se identificar com uma lista ou ter um diagnóstico para procurar um espaço de escuta.</p>
+        <br>
+        <p><em>Às vezes, o primeiro passo é simplesmente perceber que você gostaria de falar sobre isso.</em></p>
+        <br>
+        <a class="btn" href="#atendimento">Quero conhecer o atendimento</a>
+      </div>
+
+      <div class="experience-card" id="psicanalise">
+        <div class="eyebrow">O que é a psicanálise?</div>
+        <div class="divider"></div>
+        <h2>A psicanálise é um espaço de fala e escuta.</h2>
+        <br>
+        <p>Um espaço onde você pode falar sobre aquilo que pensa, sente, deseja, teme ou ainda não consegue compreender.</p>
+        <br>
+        <p>Nem sempre sabemos de onde vem uma angústia, por que determinada situação nos afeta tanto ou por que algumas histórias parecem se repetir.</p>
+        <br>
+        <p>Na experiência analítica, a fala pode abrir caminhos para aquilo que ainda não conseguimos nomear.</p>
+        <br>
+        <p><em>Você não precisa saber exatamente o que dizer.</em></p>
+        <br>
+        <p>Não é necessário chegar à primeira sessão com uma explicação pronta sobre o que está acontecendo.</p>
+        <br>
+        <p>Podemos começar justamente pelo que trouxe você até aqui.</p>
+      </div>
+
+      <div class="experience-card" id="atendimento">
+        <div class="eyebrow">Como funciona o atendimento?</div>
+        <div class="divider"></div>
+        <div class="steps">
+          <div class="step"><div class="step-number">1</div><div><h3>Primeiro contato</h3><p>Você pode entrar em contato para tirar suas dúvidas e conhecer melhor o trabalho.</p></div></div>
+          <div class="step"><div class="step-number">2</div><div><h3>Conversa inicial</h3><p>A partir do que você traz, conversaremos sobre a possibilidade de iniciar um processo de análise.</p></div></div>
+          <div class="step"><div class="step-number">3</div><div><h3>As sessões</h3><p>Os encontros acontecem em um espaço reservado de escuta, onde você poderá falar livremente.</p></div></div>
+          <div class="step"><div class="step-number">4</div><div><h3>O processo</h3><p>Cada pessoa possui uma história e um tempo próprios. Não existe um roteiro pronto ou uma fórmula que sirva para todos.</p></div></div>
+        </div>
+        <br>
+        <p><em>A análise acontece a partir da singularidade de cada sujeito.</em></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cards-section">
+    <div class="container cards">
+      <article class="info-card">
+        <div class="eyebrow">Atendimento online</div>
+        <div class="divider"></div>
+        <h2>Um espaço de escuta onde você estiver.</h2>
+        <p>O atendimento online permite que você tenha um espaço de escuta mesmo estando em outra cidade ou país.</p>
+        <br>
+        <p>As sessões são realizadas de forma individual e reservada.</p>
+        <br>
+        <a class="btn" data-whatsapp href="#">Agendar uma conversa</a>
+        <div class="leaf">⌁</div>
+      </article>
+
+      <article class="info-card" id="exterior">
+        <div class="eyebrow">Brasileiros no exterior</div>
+        <div class="divider"></div>
+        <h2>Longe de casa, mas ainda conectado com sua história.</h2>
+        <p>Morar fora do Brasil pode trazer experiências que nem sempre são fáceis de colocar em palavras.</p>
+        <br>
+        <p>A distância da família, a saudade, as mudanças culturais, o idioma, novos relacionamentos e a adaptação podem despertar sentimentos difíceis de compreender.</p>
+        <br>
+        <p><strong>Você pode estar longe de casa sem precisar estar longe de si.</strong></p>
+        <br>
+        <a class="btn" data-whatsapp href="#">Quero saber mais</a>
+        <div class="leaf">⌁</div>
+      </article>
+    </div>
+  </section>
+
+  <section class="faq" id="faq">
+    <div class="container faq-grid">
+      <div class="eyebrow">Dúvidas frequentes</div>
+      <div class="divider"></div>
+      <h2>Perguntas frequentes</h2>
+
+      <details>
+        <summary>Preciso saber exatamente o que tenho antes de procurar a psicanálise?</summary>
+        <p>Não. Você não precisa chegar com um diagnóstico ou saber exatamente o que está acontecendo. O processo pode começar justamente a partir daquilo que está causando incômodo.</p>
+      </details>
+      <details>
+        <summary>Como saber se a psicanálise é para mim?</summary>
+        <p>O primeiro contato pode ser um momento para conhecer o trabalho e entender se esse tipo de escuta faz sentido para você.</p>
+      </details>
+      <details>
+        <summary>O atendimento pode ser online?</summary>
+        <p>Sim. O atendimento online possibilita o acompanhamento de pessoas em diferentes cidades e também de brasileiros que vivem fora do país.</p>
+      </details>
+      <details>
+        <summary>Quanto tempo dura uma sessão?</summary>
+        <p>A duração e a frequência dos encontros são combinadas de acordo com o trabalho analítico e as particularidades de cada processo.</p>
+      </details>
+      <details>
+        <summary>Preciso contar tudo na primeira sessão?</summary>
+        <p>Não. Não existe obrigação de contar tudo de uma vez. A fala acontece no tempo de cada pessoa.</p>
+      </details>
+      <details>
+        <summary>A psicanálise oferece respostas para os meus problemas?</summary>
+        <p>A proposta não é oferecer respostas prontas ou dizer o que você deve fazer. O processo busca possibilitar uma escuta e uma elaboração próprias sobre aquilo que você vive.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="contact" id="contato">
+    <div class="contact-grid">
+      <div class="contact-photo">
+        <img src="foto-fabiana.jpg" alt="Fabiana Baratta, psicanalista">
+      </div>
+      <div class="contact-copy">
+        <div class="eyebrow">Contato</div>
+        <div class="divider"></div>
+        <h2>Hoje pode ser o momento de começar.</h2>
+        <p>Você não precisa saber exatamente o que dizer.</p>
+        <p>Pode começar simplesmente entrando em contato.</p>
+
+        <div class="contact-list">
+          <div class="contact-item"><strong>Fabiana Baratta | Psicanalista</strong><span>CBPC-5188</span></div>
+          <div class="contact-item"><strong>Atendimento</strong><span>Online para todo o Brasil e brasileiros no exterior.</span></div>
+          <div class="contact-item"><strong>WhatsApp</strong><span id="whatsapp-display">[inserir número]</span></div>
+          <div class="contact-item"><strong>E-mail</strong><span id="email-display">[inserir e-mail profissional]</span></div>
+          <div class="contact-item"><strong>Instagram</strong><span>@fabianabarattapsicanalista</span></div>
+        </div>
+
+        <a class="btn" data-whatsapp href="#">Agendar uma conversa</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="final-cta">
+    <h2>Você não precisa ter todas as respostas.</h2>
+    <p>Talvez precise apenas de um lugar onde possa começar a falar.</p>
+    <a class="btn" data-whatsapp href="#">Agendar uma conversa</a>
+  </section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <div class="footer-brand">FABIANA BARATTA</div>
+      <div>PSICANALISTA</div>
+    </div>
+    <div class="footer-center">
+      CBPC-5188 &nbsp; · &nbsp; Atendimento online<br>
+      São José do Rio Preto – SP
+    </div>
+    <div class="footer-right">
+      Instagram: @fabianabarattapsicanalista<br>
+      WhatsApp | Contato
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp-float" data-whatsapp href="#" aria-label="Falar pelo WhatsApp">◉</a>
+
+<script>
+  /*
+    ============================================================
+    CONFIGURAÇÃO — EDITE SOMENTE ESTA PARTE
+    ============================================================
+  */
+  const CONFIG = {
+    whatsapp: "5517981118323", // número já configurado
+    whatsappMessage: "Olá, Fabiana. Gostaria de saber mais sobre o atendimento.",
+    email: "contato@fabianabaratta.com.br",
+    instagram: "https://www.instagram.com/fabianabarattapsicanalista/"
+  };
+
+  const whatsappUrl = "https://wa.me/" + CONFIG.whatsapp +
+    "?text=" + encodeURIComponent(CONFIG.whatsappMessage);
+
+  document.querySelectorAll("[data-whatsapp]").forEach(el => {
+    el.href = whatsappUrl;
+    el.target = "_blank";
+    el.rel = "noopener noreferrer";
+  });
+
+  const emailEl = document.getElementById("email-display");
+  if (emailEl && CONFIG.email) emailEl.textContent = CONFIG.email;
+
+  const whatsappEl = document.getElementById("whatsapp-display");
+  if (whatsappEl && CONFIG.whatsapp) {
+    const digits = CONFIG.whatsapp.replace(/\D/g,"");
+    if (digits.length >= 12) {
+      const ddd = digits.substring(2,4);
+      const first = digits.length === 13 ? digits.substring(4,9) : digits.substring(4,8);
+      const last = digits.length === 13 ? digits.substring(9) : digits.substring(8);
+      whatsappEl.textContent = `(${ddd}) ${first}-${last}`;
+    }
+  }
+
+  const menuToggle = document.querySelector(".menu-toggle");
+  const navLinks = document.querySelector(".nav-links");
+
+  menuToggle.addEventListener("click", () => {
+    const open = navLinks.classList.toggle("open");
+    menuToggle.setAttribute("aria-expanded", open ? "true" : "false");
+    menuToggle.textContent = open ? "×" : "☰";
+  });
+
+  document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+      navLinks.classList.remove("open");
+      menuToggle.setAttribute("aria-expanded", "false");
+      menuToggle.textContent = "☰";
+    });
+  });
+</script>
+
+</body>
+</html>
