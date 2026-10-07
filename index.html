@@ -32,8 +32,8 @@
     .container{width:min(calc(100% - 40px),var(--max));margin:auto}
     .eyebrow{text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;color:var(--sage-2);font-weight:700}
     h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.15}
-    h2{font-size:clamp(2rem,4vw,3.1rem);margin-bottom:20px}
-    h3{font-size:1.45rem}
+    h2{font-size:clamp(1.9rem,3.4vw,2.8rem);margin-bottom:18px}
+    h3{font-size:1.4rem}
     p{color:var(--muted);font-size:1rem}
     .btn{
       display:inline-flex;align-items:center;justify-content:center;gap:9px;
@@ -43,49 +43,72 @@
     .btn:hover{transform:translateY(-2px);background:#35483e}
     .btn-light{background:transparent;color:var(--sage);border-color:var(--sage)}
     .btn-light:hover{color:#fff}
-    .divider{width:48px;height:1px;background:var(--sage-2);margin:22px 0}
-    section{padding:95px 0;scroll-margin-top:80px}
+    .divider{width:48px;height:1px;background:var(--sage-2);margin:20px 0}
+    section{padding:85px 0}
+
+    /* ===== CORREÇÃO DO SCROLL (evita cortar texto atrás do header) ===== */
+    section,
+    [id],
+    .experience-card,
+    .info-card{
+      scroll-margin-top:100px;
+    }
 
     /* Header */
     header{
       position:sticky;top:0;z-index:1000;background:rgba(255,253,249,.96);
       backdrop-filter:blur(10px);border-bottom:1px solid rgba(221,220,212,.7)
     }
-    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .nav{height:70px;display:flex;align-items:center;justify-content:space-between;gap:24px}
     .brand{display:flex;flex-direction:column;line-height:1}
-    .brand strong{font-family:var(--serif);font-size:1.2rem;letter-spacing:.12em;font-weight:400}
-    .brand span{font-size:.58rem;letter-spacing:.25em;margin-top:7px;color:var(--muted);text-align:center}
-    .nav-links{display:flex;align-items:center;gap:22px;font-size:.78rem;color:#505a54}
+    .brand strong{font-family:var(--serif);font-size:1.15rem;letter-spacing:.12em;font-weight:400}
+    .brand span{font-size:.55rem;letter-spacing:.25em;margin-top:6px;color:var(--muted);text-align:center}
+    .nav-links{display:flex;align-items:center;gap:20px;font-size:.75rem;color:#505a54}
     .nav-links a{position:relative;white-space:nowrap}
     .nav-links a:after{content:"";position:absolute;left:0;bottom:-7px;width:0;height:1px;background:var(--sage);transition:.2s}
     .nav-links a:hover:after{width:100%}
-    .nav-cta{padding:10px 17px;font-size:.76rem}
+    .nav-cta{padding:9px 16px;font-size:.74rem}
     .menu-toggle{display:none;border:0;background:none;font-size:1.6rem;color:var(--sage);cursor:pointer}
 
-    /* Hero */
+    /* Hero — foto e texto cabem na tela sem rolar */
     .hero{padding:0;background:var(--bg)}
-    .hero-grid{min-height:calc(100vh - 76px);display:grid;grid-template-columns:1fr 1fr;align-items:stretch}
-    .hero-photo{min-height:650px;background:#dedbd1;position:relative;overflow:hidden}
-    .hero-photo img{width:100%;height:100%;object-fit:cover}
-    .photo-placeholder{
-      width:100%;height:100%;min-height:650px;display:flex;align-items:center;justify-content:center;
-      color:#7d827c;text-align:center;padding:40px;background:
-      linear-gradient(135deg,#e6e2d8,#d6d1c5);
+    .hero-grid{
+      display:grid;grid-template-columns:1fr 1fr;align-items:stretch;
+      height:calc(100vh - 70px);max-height:820px;min-height:560px;
     }
-    .photo-placeholder div{max-width:280px}
-    .photo-placeholder strong{display:block;font-family:var(--serif);font-size:1.5rem;font-weight:400;margin-bottom:8px}
-    .hero-copy{display:flex;align-items:center;padding:70px clamp(35px,7vw,100px)}
-    .hero-copy h1{font-size:clamp(3rem,5vw,5rem);color:#33483e;max-width:620px}
-    .hero-copy p{max-width:500px;font-size:1.05rem}
-    .hero-note{font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--sage-2);margin-bottom:25px}
+    .hero-photo{position:relative;overflow:hidden;background:#dedbd1}
+    .hero-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
+    .hero-copy{display:flex;align-items:center;padding:50px clamp(30px,6vw,80px);overflow:hidden}
+    .hero-copy h1{font-size:clamp(2.1rem,3.6vw,3.4rem);color:#33483e;max-width:560px;line-height:1.15}
+    .hero-copy p{max-width:480px;font-size:1rem}
+    .hero-note{font-family:var(--serif);font-style:italic;font-size:1rem;color:var(--sage-2);margin-bottom:18px}
 
-    /* About */
+    /* About — layout ajustado */
     .about{background:var(--paper)}
-    .about-grid{display:grid;grid-template-columns:1.05fr .85fr .7fr;gap:55px;align-items:center}
-    .about-image{height:480px;background:#e9e5dc;overflow:hidden}
-    .about-image img{width:100%;height:100%;object-fit:cover}
-    .quote{font-family:var(--serif);font-size:2rem;line-height:1.35;font-style:italic;color:#59665e}
-    .quote:before{content:"“";font-size:4rem;display:block;height:30px;color:#a1aaa3}
+    .about-grid{
+      display:grid;
+      grid-template-columns:1.1fr 0.9fr;
+      gap:60px;
+      align-items:center;
+    }
+    .about-text{max-width:560px}
+    .about-image{
+      height:520px;background:#e9e5dc;overflow:hidden;
+      display:flex;align-items:center;justify-content:center;
+    }
+    .about-image img{width:100%;height:100%;object-fit:cover;object-position:center top}
+    .about-quote{
+      grid-column:1 / -1;
+      margin-top:20px;
+      padding-top:35px;
+      border-top:1px solid var(--line);
+      text-align:center;
+    }
+    .quote{
+      font-family:var(--serif);font-size:1.6rem;line-height:1.4;
+      font-style:italic;color:#59665e;max-width:640px;margin:0 auto;
+    }
+    .quote:before{content:"“ ";font-size:3rem;color:#a1aaa3;vertical-align:-12px}
 
     /* Experiences */
     .experiences{background:var(--bg)}
@@ -93,14 +116,14 @@
     .experience-card{padding:0 38px;border-left:1px solid var(--line)}
     .experience-card:first-child{border-left:0;padding-left:0}
     .experience-card:last-child{padding-right:0}
-    .experience-card h2{font-size:2rem}
-    .bullet-list{columns:2;gap:28px;margin:24px 0}
-    .bullet-list li{list-style:none;position:relative;padding-left:17px;margin-bottom:10px;font-size:.9rem;color:var(--muted)}
+    .experience-card h2{font-size:1.85rem}
+    .bullet-list{columns:2;gap:28px;margin:22px 0}
+    .bullet-list li{list-style:none;position:relative;padding-left:17px;margin-bottom:9px;font-size:.9rem;color:var(--muted)}
     .bullet-list li:before{content:"";width:5px;height:5px;border-radius:50%;background:var(--sage-2);position:absolute;left:0;top:10px}
 
     /* Steps */
-    .steps{margin-top:26px}
-    .step{display:grid;grid-template-columns:34px 1fr;gap:15px;margin-bottom:25px}
+    .steps{margin-top:24px}
+    .step{display:grid;grid-template-columns:34px 1fr;gap:15px;margin-bottom:22px}
     .step-number{width:30px;height:30px;border-radius:50%;background:var(--sage);color:#fff;display:grid;place-items:center;font-size:.75rem}
     .step h3{font-size:1.05rem;margin-bottom:5px}
     .step p{font-size:.86rem}
@@ -108,9 +131,9 @@
     /* Online / abroad */
     .cards-section{background:var(--paper)}
     .cards{display:grid;grid-template-columns:1fr 1fr;gap:25px}
-    .info-card{min-height:360px;padding:45px;background:var(--bg);position:relative;overflow:hidden}
+    .info-card{min-height:340px;padding:45px;background:var(--bg);position:relative;overflow:hidden}
     .info-card:nth-child(2){background:#e9ece5}
-    .info-card h2{font-size:2.25rem;max-width:470px}
+    .info-card h2{font-size:2.05rem;max-width:470px}
     .info-card p{max-width:520px}
     .leaf{position:absolute;right:-30px;bottom:-50px;font-family:var(--serif);font-size:9rem;color:rgba(67,88,77,.08);transform:rotate(-15deg)}
 
@@ -119,7 +142,7 @@
     .faq-grid{max-width:900px;margin:auto}
     details{border-top:1px solid var(--line);padding:22px 0}
     details:last-child{border-bottom:1px solid var(--line)}
-    summary{cursor:pointer;list-style:none;font-family:var(--serif);font-size:1.2rem;padding-right:30px;position:relative}
+    summary{cursor:pointer;list-style:none;font-family:var(--serif);font-size:1.15rem;padding-right:30px;position:relative}
     summary::-webkit-details-marker{display:none}
     summary:after{content:"+";position:absolute;right:0;font-family:var(--sans);font-size:1.2rem;color:var(--sage)}
     details[open] summary:after{content:"−"}
@@ -129,71 +152,90 @@
     .contact{background:var(--paper);padding-bottom:0}
     .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;align-items:stretch}
     .contact-photo{min-height:470px;background:#dedbd1}
-    .contact-photo img{width:100%;height:100%;object-fit:cover}
-    .contact-copy{padding:65px clamp(35px,7vw,90px);background:var(--bg)}
-    .contact-list{margin:30px 0}
-    .contact-item{margin-bottom:16px}
+    .contact-photo img{width:100%;height:100%;object-fit:cover;object-position:center top}
+    .contact-copy{padding:60px clamp(30px,6vw,80px);background:var(--bg)}
+    .contact-list{margin:28px 0}
+    .contact-item{margin-bottom:15px}
     .contact-item strong{display:block;font-family:var(--serif);font-size:1rem;font-weight:400}
     .contact-item span{font-size:.9rem;color:var(--muted)}
 
     /* Final CTA */
-    .final-cta{background:var(--sage);color:#fff;text-align:center;padding:75px 20px}
-    .final-cta h2{font-size:clamp(2.2rem,4vw,3.4rem);max-width:800px;margin:0 auto 10px;color:#fff}
-    .final-cta p{color:#e5ebe6;margin-bottom:28px}
+    .final-cta{background:var(--sage);color:#fff;text-align:center;padding:70px 20px}
+    .final-cta h2{font-size:clamp(2rem,3.6vw,3rem);max-width:800px;margin:0 auto 10px;color:#fff}
+    .final-cta p{color:#e5ebe6;margin-bottom:26px}
     .final-cta .btn{background:transparent;border-color:#fff;color:#fff}
     .final-cta .btn:hover{background:#fff;color:var(--sage)}
 
-    footer{background:var(--paper);padding:35px 0}
+    footer{background:var(--paper);padding:32px 0}
     .footer-grid{display:grid;grid-template-columns:1fr 1fr 1fr;align-items:center;gap:20px;font-size:.78rem;color:var(--muted)}
     .footer-brand{font-family:var(--serif);font-size:1rem;letter-spacing:.1em;color:var(--ink)}
     .footer-center{text-align:center}
     .footer-right{text-align:right}
+
+    /* Botão flutuante WhatsApp — ícone oficial */
     .whatsapp-float{
-      position:fixed;right:22px;bottom:22px;z-index:900;width:56px;height:56px;border-radius:50%;
-      background:#25d366;color:white;display:grid;place-items:center;font-weight:bold;font-size:1.3rem;
-      box-shadow:0 7px 25px rgba(0,0,0,.18);transition:.2s
+      position:fixed;right:22px;bottom:22px;z-index:900;
+      width:58px;height:58px;border-radius:50%;
+      background:#25d366;color:#fff;
+      display:grid;place-items:center;
+      box-shadow:0 8px 25px rgba(37,211,102,.45);
+      transition:transform .2s ease, box-shadow .2s ease;
     }
-    .whatsapp-float:hover{transform:scale(1.05)}
+    .whatsapp-float svg{width:32px;height:32px;fill:#fff}
+    .whatsapp-float:hover{transform:scale(1.08);box-shadow:0 10px 30px rgba(37,211,102,.6)}
 
     @media(max-width:1050px){
-      .nav-links{gap:13px;font-size:.7rem}
-      .about-grid{grid-template-columns:1fr 1fr}
-      .quote{grid-column:1/-1}
+      .nav-links{gap:12px;font-size:.68rem}
+      .about-grid{gap:40px}
+      .quote{font-size:1.4rem}
     }
     @media(max-width:800px){
       .container{width:min(calc(100% - 30px),var(--max))}
-      section{padding:70px 0}
-      .nav{height:68px}
+      section{padding:65px 0}
+      .nav{height:64px}
       .menu-toggle{display:block}
       .nav-links{
-        display:none;position:absolute;top:68px;left:0;right:0;background:var(--paper);
+        display:none;position:absolute;top:64px;left:0;right:0;background:var(--paper);
         padding:20px 25px 25px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line);
         box-shadow:0 10px 25px rgba(0,0,0,.05)
       }
       .nav-links.open{display:flex}
       .nav-cta{display:none}
-      .hero-grid{grid-template-columns:1fr}
-      .hero-photo,.photo-placeholder{min-height:65vh;height:65vh}
-      .hero-copy{padding:60px 25px 70px}
-      .hero-copy h1{font-size:3rem}
+      .hero-grid{
+        grid-template-columns:1fr;
+        height:auto;max-height:none;min-height:0;
+      }
+      .hero-photo{height:60vh;min-height:380px}
+      .hero-copy{padding:50px 25px 60px}
+      .hero-copy h1{font-size:2.3rem}
       .about-grid,.experience-grid,.cards,.contact-grid{grid-template-columns:1fr}
-      .about-image{height:380px}
-      .experience-card{border-left:0;border-top:1px solid var(--line);padding:35px 0}
+      .about-image{height:400px}
+      .experience-card{border-left:0;border-top:1px solid var(--line);padding:32px 0}
       .experience-card:first-child{border-top:0;padding-top:0}
       .experience-card:last-child{padding-right:0}
       .bullet-list{columns:1}
-      .info-card{min-height:320px}
+      .info-card{min-height:300px}
       .contact-photo{min-height:330px}
       .footer-grid{grid-template-columns:1fr;text-align:center}
       .footer-center,.footer-right{text-align:center}
+
+      /* Ajuste do scroll no mobile (header menor) */
+      section,
+      [id],
+      .experience-card,
+      .info-card{
+        scroll-margin-top:90px;
+      }
     }
     @media(max-width:480px){
-      .hero-copy h1{font-size:2.55rem}
+      .hero-copy h1{font-size:1.9rem}
       .brand strong{font-size:1rem}
       .brand span{font-size:.5rem}
-      .hero-photo,.photo-placeholder{min-height:55vh;height:55vh}
-      .info-card{padding:35px 28px}
-      .contact-copy{padding:50px 25px}
+      .hero-photo{height:50vh;min-height:320px}
+      .info-card{padding:32px 26px}
+      .contact-copy{padding:45px 25px}
+      .whatsapp-float{width:52px;height:52px;right:16px;bottom:16px}
+      .whatsapp-float svg{width:28px;height:28px}
     }
   </style>
 </head>
@@ -226,7 +268,6 @@
   <section class="hero" id="inicio">
     <div class="hero-grid">
       <div class="hero-photo">
-        <!-- FOTO PRINCIPAL DA FABIANA -->
         <img src="foto-fabiana.jpg" alt="Fabiana Baratta, psicanalista">
       </div>
       <div class="hero-copy">
@@ -245,7 +286,7 @@
 
   <section class="about" id="sobre">
     <div class="container about-grid">
-      <div>
+      <div class="about-text">
         <div class="eyebrow">Sobre mim</div>
         <div class="divider"></div>
         <h2>Um espaço para falar.</h2>
@@ -268,8 +309,8 @@
         <img src="foto-fabiana.jpg" alt="Fabiana Baratta, psicanalista">
       </div>
 
-      <div class="quote">
-        A escuta é o início de novos caminhos.
+      <div class="about-quote">
+        <div class="quote">A escuta é o início de novos caminhos.</div>
       </div>
     </div>
   </section>
@@ -448,16 +489,16 @@
   </div>
 </footer>
 
-<a class="whatsapp-float" data-whatsapp href="#" aria-label="Falar pelo WhatsApp">◉</a>
+<!-- Botão flutuante do WhatsApp com ícone oficial -->
+<a class="whatsapp-float" data-whatsapp href="#" aria-label="Falar pelo WhatsApp">
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M16.004 3C9.383 3 4 8.383 4 15.004c0 2.348.68 4.535 1.855 6.383L4 29l7.797-1.816A11.94 11.94 0 0 0 16.004 27C22.625 27 28 21.617 28 15.004 28 8.383 22.625 3 16.004 3zm0 21.818a9.79 9.79 0 0 1-4.996-1.367l-.36-.214-4.63 1.078 1.1-4.512-.234-.371a9.79 9.79 0 0 1-1.5-5.213c0-5.42 4.41-9.83 9.83-9.83s9.83 4.41 9.83 9.83c0 5.42-4.41 9.83-9.83 9.83zm5.398-7.36c-.297-.148-1.75-.863-2.02-.961-.27-.1-.467-.148-.664.148-.196.297-.762.961-.934 1.16-.172.196-.344.223-.64.074-.297-.148-1.254-.461-2.391-1.473-.883-.789-1.481-1.762-1.653-2.059-.172-.297-.018-.457.13-.605.13-.13.297-.34.445-.508.148-.172.196-.297.297-.496.098-.196.05-.371-.024-.52-.075-.148-.664-1.6-.91-2.191-.242-.576-.484-.497-.664-.508l-.566-.012c-.196 0-.516.074-.785.371-.27.297-1.031 1.008-1.031 2.457 0 1.45 1.055 2.848 1.203 3.047.148.196 2.078 3.172 5.031 4.449.703.305 1.25.484 1.68.621.707.223 1.352.191 1.86.117.566-.086 1.75-.715 2-1.406.246-.691.246-1.285.172-1.406-.074-.122-.27-.196-.566-.344z"/>
+  </svg>
+</a>
 
 <script>
-  /*
-    ============================================================
-    CONFIGURAÇÃO — EDITE SOMENTE ESTA PARTE
-    ============================================================
-  */
   const CONFIG = {
-    whatsapp: "5517981118323", // número já configurado
+    whatsapp: "5517981118323",
     whatsappMessage: "Olá, Fabiana. Gostaria de saber mais sobre o atendimento.",
     email: "contato@fabianabaratta.com.br",
     instagram: "https://www.instagram.com/fabianabarattapsicanalista/"
