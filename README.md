@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Fabiana Baratta, psicanalista. Atendimento online no Brasil e para brasileiros no exterior.">
+<title>Fabiana Baratta | Psicanalista</title>
+<style>
+:root{--bg:#f7f4ee;--alt:#ece8df;--ink:#292d28;--muted:#666b63;--sage:#566256;--line:#d8d3c8;--white:#fffdf9;--max:1160px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.7 Arial,sans-serif}
+h1,h2,h3{font-family:Georgia,serif;font-weight:400;line-height:1.12}h1{font-size:clamp(3rem,7vw,5.7rem);margin:15px 0 25px}h2{font-size:clamp(2.3rem,4.5vw,4rem);margin:12px 0 25px}h3{font-size:1.5rem;margin:12px 0}
+a{color:inherit;text-decoration:none}.wrap{width:min(calc(100% - 32px),var(--max));margin:auto}.ey{font-size:.72rem;text-transform:uppercase;letter-spacing:.16em;color:var(--sage);font-weight:700}
+header{position:sticky;top:0;z-index:10;background:#f7f4eef2;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{font:22px Georgia,serif}.brand small{display:block;font:600 9px Arial;letter-spacing:.18em;color:var(--muted)}
+.links{display:flex;gap:22px;align-items:center;font-size:14px}.links a:hover{color:var(--sage)}.menu{display:none;border:0;background:none;font-size:24px}
+.btn{display:inline-block;border-radius:30px;padding:13px 21px;font-weight:bold;border:1px solid var(--line)}.primary{background:var(--sage);color:white;border-color:var(--sage)}
+.hero{padding:75px 0 95px}.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:65px;align-items:center}.lead{font-size:19px;color:var(--muted);max-width:590px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:30px}.note{font-size:13px;color:var(--muted);margin-top:16px}
+.photo{height:610px;border-radius:180px 180px 24px 24px;overflow:hidden;background:linear-gradient(145deg,#ddd8ca,#b7c0b2);display:flex;align-items:end;padding:0;color:white;font:22px Georgia,serif}
+.photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block}
+section{padding:105px 0}.alt{background:var(--alt)}.two{display:grid;grid-template-columns:.7fr 1.3fr;gap:85px}.copy{font-size:18px}.copy p+p{margin-top:20px}.sig{color:var(--sage);font-weight:bold}
+.listhead{display:flex;justify-content:space-between;gap:35px;align-items:end;margin-bottom:38px}.listhead p{max-width:470px;color:var(--muted)}
+.items{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line)}.item{padding:27px 22px;border:1px solid var(--line);min-height:120px}.item strong{font:20px Georgia,serif}
+.concepts{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:30px}.concept{padding:25px;background:#ffffff55;border-top:1px solid var(--sage)}.concept p,.step p,.card p,details p{color:var(--muted)}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;margin-top:45px}.step{border-top:1px solid var(--line);padding-top:22px}.num{font-size:11px;color:var(--sage);letter-spacing:.12em;font-weight:bold}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:48px}.card{background:var(--white);padding:38px;border:1px solid var(--line);border-radius:20px}.link{display:inline-block;margin-top:18px;color:var(--sage);font-weight:bold}
+.dark{background:var(--sage);color:white}.dark .ey{color:#dce4d8}.dark p{color:#f0f2ed}.darkgrid{display:grid;grid-template-columns:.8fr 1.2fr;gap:75px}.quote{font:clamp(2.1rem,4vw,3.5rem)/1.18 Georgia,serif}
+.faq{max-width:850px;margin:45px auto 0}details{border-top:1px solid var(--line)}details:last-child{border-bottom:1px solid var(--line)}summary{list-style:none;cursor:pointer;padding:22px 0;font:22px Georgia,serif}summary::-webkit-details-marker{display:none}
+.contact{background:#e4e0d6}.contactgrid{display:grid;grid-template-columns:1fr 1fr;gap:65px;align-items:center}.box{background:var(--white);padding:32px;border:1px solid var(--line);border-radius:20px}.row{padding:14px 0;border-bottom:1px solid var(--line)}.row:last-child{border:0}.row span{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.12em;color:var(--muted)}
+.final{text-align:center}.final h2{max-width:760px;margin:12px auto 28px}.final p{color:var(--muted)}footer{border-top:1px solid var(--line);padding:32px 0;color:var(--muted);font-size:13px}.foot{display:flex;justify-content:space-between;gap:20px}
+
+/* ===== Botão flutuante WhatsApp — ícone oficial ===== */
+.wa-float{
+  position:fixed;right:20px;bottom:20px;z-index:20;
+  width:60px;height:60px;border-radius:50%;
+  background:#25d366;
+  display:grid;place-items:center;
+  box-shadow:0 8px 25px rgba(37,211,102,.45);
+  transition:transform .2s ease, box-shadow .2s ease;
+}
+.wa-float svg{width:34px;height:34px;fill:#fff;display:block}
+.wa-float:hover{transform:scale(1.08);box-shadow:0 10px 30px rgba(37,211,102,.6)}
+
+@media(max-width:900px){.links{display:none;position:absolute;top:76px;left:0;right:0;background:var(--bg);padding:18px 16px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}.links.open{display:flex}.menu{display:block}.navcta{display:none}.hero-grid,.two,.darkgrid,.contactgrid{grid-template-columns:1fr}.photo{height:470px}.items{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}}
+@media(max-width:560px){section{padding:72px 0}.hero{padding:42px 0 65px}h1{font-size:3.05rem}.actions .btn{width:100%;text-align:center}.photo{height:410px;border-radius:130px 130px 18px 18px}.items,.concepts,.steps,.cards{grid-template-columns:1fr}.listhead{display:block}.listhead p{margin-top:15px}.card{padding:28px}.wa-float{width:54px;height:54px;right:14px;bottom:14px}.wa-float svg{width:30px;height:30px}.foot{display:block}.foot>*+*{margin-top:10px}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><nav>
+<a class="brand" href="#inicio">FABIANABARATTA.COM.BR<small>PSICANALISTA</small></a>
+<div class="links" id="links"><a href="#sobre">Sobre mim</a><a href="#psicanalise">Psicanálise</a><a href="#atendimento">Atendimento</a><a href="#exterior">Exterior</a><a href="#duvidas">Dúvidas</a><a href="#contato">Contato</a></div>
+<a class="btn primary navcta" data-wa>Agendar uma conversa</a><button class="menu" id="menu">☰</button>
+</nav></div></header>
+
+<main>
+<section class="hero" id="inicio"><div class="wrap hero-grid"><div>
+<div class="ey">Fabiana Baratta · Psicanalista · CBPC-5188</div>
+<h1>Você não precisa ter as <em style="color:var(--sage)">respostas</em> para começar a falar.</h1>
+<p class="lead">Um espaço de escuta para falar sobre aquilo que, às vezes, ainda não conseguimos compreender ou nomear.</p>
+<div class="actions"><a class="btn primary" data-wa>Agendar uma conversa</a><a class="btn" href="#psicanalise">Conhecer a psicanálise</a></div>
+<p class="note">Atendimento online · Brasil e brasileiros que vivem no exterior</p>
+</div>
+<div class="photo">
+  <!-- FOTO PRINCIPAL DA FABIANA -->
+  <img src="foto-fabiana.jpg" alt="Fabiana Baratta, psicanalista">
+</div>
+</div></section>
+
+<section id="sobre"><div class="wrap two"><div><div class="ey">Sobre mim</div><h2>Um espaço para você falar.</h2></div><div class="copy">
+<p>Sou Fabiana Baratta, psicanalista, com formação em Psicanálise pela Escola de Psicanálise de Curitiba.</p>
+<p>Meu trabalho parte da escuta e do respeito à singularidade de cada pessoa. A psicanálise não oferece respostas prontas: é um espaço em que a fala pode abrir novas perguntas, sentidos e caminhos.</p>
+<p>Meu propósito é oferecer acolhimento, escuta e respeito ao tempo de cada pessoa, para que aquilo que traz sofrimento, dúvida ou inquietação possa encontrar um lugar para ser dito.</p>
+<p class="sig">Fabiana Baratta · Psicanalista · CBPC-5188</p>
+</div></div></section>
+
+<section class="alt"><div class="wrap"><div class="listhead"><div><div class="ey">Talvez você esteja vivendo...</div><h2>Algo que você gostaria de compreender melhor.</h2></div><p>Nem sempre é preciso saber exatamente o que está acontecendo para procurar um espaço de escuta.</p></div>
+<div class="items"><div class="item"><strong>Ansiedade e angústia</strong></div><div class="item"><strong>Pensamentos que não param</strong></div><div class="item"><strong>Mudanças, perdas ou recomeços</strong></div><div class="item"><strong>Solidão, mesmo acompanhado</strong></div><div class="item"><strong>Dificuldades nos relacionamentos</strong></div><div class="item"><strong>Conflitos no trabalho</strong></div><div class="item"><strong>Dificuldade de colocar limites</strong></div><div class="item"><strong>Questionamentos sobre escolhas e caminhos</strong></div></div>
+<p style="color:var(--muted);max-width:800px;margin-top:28px">Você não precisa ter um diagnóstico ou se identificar com uma lista para procurar um espaço de escuta. Às vezes, o primeiro passo é simplesmente perceber que você gostaria de falar sobre isso.</p>
+</div></section>
+
+<section id="psicanalise"><div class="wrap two"><div><div class="ey">O que é a psicanálise?</div><h2>Falar também pode abrir caminhos.</h2></div><div class="copy">
+<p>A psicanálise é um espaço de fala e escuta. Um lugar para falar sobre pensamentos, sentimentos, desejos, medos e aquilo que nem sempre conseguimos entender sozinhos.</p><p>Você não precisa saber de onde vem a sua angústia, nem chegar sabendo exatamente o que dizer. O processo pode começar justamente a partir daquilo que trouxe você até aqui.</p><p>A partir da fala, podem surgir novas formas de olhar para o que se repete, para o que incomoda e para aquilo que ainda não encontrou palavras.</p>
+<div class="concepts"><div class="concept"><div class="ey">01 · Fala</div><p>Dar lugar ao que está sendo vivido.</p></div><div class="concept"><div class="ey">02 · Escuta</div><p>Ser escutado sem respostas prontas.</p></div><div class="concept"><div class="ey">03 · Singularidade</div><p>Respeitar a história e o tempo de cada pessoa.</p></div></div>
+</div></div></section>
+
+<section class="alt" id="atendimento"><div class="wrap"><div class="ey">Como funciona o atendimento</div><h2>Não existe um caminho pronto. O processo começa com você.</h2>
+<div class="steps"><div class="step"><div class="num">01 · PRIMEIRO CONTATO</div><h3>Uma conversa</h3><p>Você pode entrar em contato pelo WhatsApp para tirar dúvidas e conhecer o trabalho.</p></div><div class="step"><div class="num">02 · CONVERSA INICIAL</div><h3>Conhecer o que trouxe você</h3><p>Um primeiro encontro para falar sobre o momento que você está vivendo.</p></div><div class="step"><div class="num">03 · SESSÕES</div><h3>Um espaço de escuta</h3><p>As sessões acontecem de acordo com a singularidade e as questões de cada pessoa.</p></div><div class="step"><div class="num">04 · PROCESSO</div><h3>Seu próprio caminho</h3><p>A análise não segue uma fórmula pronta. O processo se constrói ao longo da fala.</p></div></div>
+<div class="cards"><article class="card"><div class="ey">Atendimento online</div><h3>De onde você estiver.</h3><p>Atendimento individual e online, com privacidade e acolhimento, para pessoas em diferentes cidades e regiões do Brasil.</p><a class="link" data-wa>Conversar pelo WhatsApp →</a></article>
+<article class="card" id="exterior"><div class="ey">Para brasileiros no exterior</div><h3>Você pode estar longe de casa sem precisar estar longe de si.</h3><p>A distância da família, a saudade, mudanças culturais, idioma, relacionamentos, adaptação e pertencimento podem trazer questões que merecem um espaço de escuta.</p><a class="link" data-wa>Falar sobre o atendimento →</a></article></div>
+</div></section>
+
+<section class="dark"><div class="wrap darkgrid"><div><div class="ey">Brasileiros no exterior</div><div class="quote" style="margin-top:18px">“Você pode estar longe de casa sem precisar estar longe de si.”</div></div><div class="copy"><p>Viver em outro país pode trazer novas referências, outra língua, mudanças nas relações, saudade e perguntas sobre onde pertencemos.</p><p>O atendimento online possibilita manter um espaço de escuta em português, mesmo estando longe do Brasil.</p><p><strong>Atendimento online para brasileiros que vivem no exterior.</strong></p></div></div></section>
+
+<section id="duvidas"><div class="wrap"><div style="text-align:center"><div class="ey">Dúvidas frequentes</div><h2>Talvez você também esteja se perguntando...</h2></div><div class="faq">
+<details><summary>Preciso ter um diagnóstico para fazer psicanálise?</summary><p>Não. Você não precisa ter um diagnóstico para procurar um espaço de escuta.</p></details>
+<details><summary>Como saber se a psicanálise é para mim?</summary><p>Não é necessário ter certeza antes de começar. Uma conversa inicial pode ajudar você a conhecer o trabalho e perceber se esse espaço faz sentido.</p></details>
+<details><summary>O atendimento pode ser online?</summary><p>Sim. O atendimento é realizado online, no Brasil ou no exterior.</p></details>
+<details><summary>Preciso contar tudo na primeira sessão?</summary><p>Não. Você não precisa chegar com tudo organizado ou saber exatamente por onde começar.</p></details>
+<details><summary>A psicanálise oferece respostas?</summary><p>A proposta não é oferecer respostas prontas. A escuta e a fala podem possibilitar novas perguntas, sentidos e formas de olhar para aquilo que você está vivendo.</p></details>
+</div></div></section>
+
+<section class="contact" id="contato"><div class="wrap contactgrid"><div><div class="ey">Contato</div><h2>Talvez o primeiro passo seja simplesmente conversar.</h2><p style="color:var(--muted);max-width:530px">Se você gostaria de conhecer o trabalho ou tirar alguma dúvida, entre em contato. Não é preciso saber exatamente o que dizer.</p><a class="btn primary" data-wa style="margin-top:28px">Agendar uma conversa</a></div>
+<div class="box"><div class="row"><span>WhatsApp</span><a data-wa>(17) 98111-8323</a></div><div class="row"><span>E-mail</span><a href="mailto:contato@fabianabaratta.com.br">contato@fabianabaratta.com.br</a></div><div class="row"><span>Instagram</span><a href="https://www.instagram.com/fabianabarattapsicanalista/" target="_blank">@fabianabarattapsicanalista</a></div><div class="row"><span>Atendimento</span>Online · Brasil e exterior</div></div></div></section>
+
+<section class="final"><div class="wrap"><div class="ey">Um espaço para começar</div><h2>Você não precisa ter todas as respostas. Talvez precise apenas de um lugar onde possa começar a falar.</h2><p>Fabiana Baratta · Psicanalista · CBPC-5188</p><a class="btn primary" data-wa>Agendar uma conversa</a></div></section>
+</main>
+
+<footer><div class="wrap foot"><div><strong style="color:var(--ink);font:18px Georgia,serif">Fabiana Baratta | Psicanalista</strong><br>CBPC-5188 · Atendimento online · São José do Rio Preto – SP</div><div><a href="https://www.instagram.com/fabianabarattapsicanalista/" target="_blank">Instagram</a> · <a href="#contato">Contato</a></div></div></footer>
+
+<!-- Botão flutuante WhatsApp — ícone oficial -->
+<a class="wa-float" data-wa href="#" aria-label="Falar pelo WhatsApp">
+  <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <path d="M16.004 3C9.383 3 4 8.383 4 15.004c0 2.348.68 4.535 1.855 6.383L4 29l7.797-1.816A11.94 11.94 0 0 0 16.004 27C22.625 27 28 21.617 28 15.004 28 8.383 22.625 3 16.004 3zm0 21.818a9.79 9.79 0 0 1-4.996-1.367l-.36-.214-4.63 1.078 1.1-4.512-.234-.371a9.79 9.79 0 0 1-1.5-5.213c0-5.42 4.41-9.83 9.83-9.83s9.83 4.41 9.83 9.83c0 5.42-4.41 9.83-9.83 9.83zm5.398-7.36c-.297-.148-1.75-.863-2.02-.961-.27-.1-.467-.148-.664.148-.196.297-.762.961-.934 1.16-.172.196-.344.223-.64.074-.297-.148-1.254-.461-2.391-1.473-.883-.789-1.481-1.762-1.653-2.059-.172-.297-.018-.457.13-.605.13-.13.297-.34.445-.508.148-.172.196-.297.297-.496.098-.196.05-.371-.024-.52-.075-.148-.664-1.6-.91-2.191-.242-.576-.484-.497-.664-.508l-.566-.012c-.196 0-.516.074-.785.371-.27.297-1.031 1.008-1.031 2.457 0 1.45 1.055 2.848 1.203 3.047.148.196 2.078 3.172 5.031 4.449.703.305 1.25.484 1.68.621.707.223 1.352.191 1.86.117.566-.086 1.75-.715 2-1.406.246-.691.246-1.285.172-1.406-.074-.122-.27-.196-.566-.344z"/>
+  </svg>
+</a>
+
+<script>
+const phone="5517981118323", msg="Olá, Fabiana! Gostaria de conhecer o seu trabalho e saber mais sobre o atendimento.";
+document.querySelectorAll("[data-wa]").forEach(a=>a.href="https://wa.me/"+phone+"?text="+encodeURIComponent(msg));
+document.getElementById("menu").onclick=()=>document.getElementById("links").classList.toggle("open");
+document.querySelectorAll("#links a").forEach(a=>a.onclick=()=>document.getElementById("links").classList.remove("open"));
+</script>
+</body></html>
